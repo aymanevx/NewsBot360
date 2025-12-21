@@ -1,6 +1,5 @@
 import asyncio
 import os
-from langchain_ollama.chat_models import ChatOllama
 from langchain_groq import ChatGroq
 from mcp_use import MCPAgent, MCPClient
 from dotenv import load_dotenv
@@ -14,7 +13,7 @@ server_path = os.path.join("server.py")
 CONFIG = {
     "mcpServers": {
         "fii-demo": {
-            "command": "C:/Users/hassan/class_ai/mcp/MCP/Scripts/python.exe",
+            "command": "D:/projets/NewsBot360/mcp/Scripts/python.exe",
             "args": [server_path]
         }
     }
