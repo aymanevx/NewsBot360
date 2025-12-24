@@ -24,7 +24,8 @@ async def run_chatbot():
     
     client = MCPClient.from_dict(CONFIG)
     # llm = ChatOllama(model="qwen3:8b")
-    llm = ChatGroq(model="openai/gpt-oss-120b")
+    llm = ChatGroq(model="llama-3.3-70b-versatile")
+
     
     agent = MCPAgent(
         llm=llm,

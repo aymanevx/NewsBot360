@@ -105,8 +105,7 @@ def newsbytheme(topic: str) -> List[Dict[str, Optional[str]]]:
     params = {
         "q": topic,
         "language": "fr",
-        "sortBy": "publishedAt",
-        "pageSize": 5,
+        "pageSize": 50,
         "apiKey": api_key
     }
 
