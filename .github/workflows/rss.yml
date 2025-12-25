@@ -35,4 +35,4 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
-          python scripts/scrape_feed_3.py
+          python scrape_full_articles.py
