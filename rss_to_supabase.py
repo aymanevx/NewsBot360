@@ -44,7 +44,12 @@ def main():
         # dédup dans le batch
         rows = list({r["link"]: r for r in rows}.values())
 
-        supabase.table("articles").upsert(rows, on_conflict="link").execute()
+        supabase.table("articles").upsert(
+            rows,
+            on_conflict="link",
+            ignore_duplicates=True
+        ).execute()
+
         print(f"[{src['name']}] OK - {len(rows)} items upsertés.")
 
 if __name__ == "__main__":

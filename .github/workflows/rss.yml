@@ -3,7 +3,7 @@ name: RSS to Supabase
 on:
   workflow_dispatch: {}
   schedule:
-  - cron: "0 20 * * *"
+    - cron: "0 20 * * *"
 
 jobs:
   run-rss:
@@ -23,9 +23,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-rss.txt
 
-      - name: Run RSS script
+      - name: Run RSS ingestion
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
           python rss_to_supabase.py
+
+      - name: Run article scraper (feed_id = 3)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          python scripts/scrape_feed_3.py
