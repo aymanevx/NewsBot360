@@ -89,7 +89,7 @@ def main():
             payload.append({
                 "article_id": article_id,
                 "link": link,
-                "content": content,
+                "content": content.split("\nÀ regarder\n-")[0],
             })
 
             print(f"[{i}/{len(todo)}] OK - {link}")
