@@ -44,25 +44,25 @@ def main():
         print("ℹ️ Aucun article pour ce feed")
         return 0
 
-    links_all = [a["link"] for a in articles if a.get("link")]
+    article_ids = [a["id"] for a in articles]
 
     # 2) Links déjà scrapés
     existing_rows = (
         supabase
         .table("article_texts")
-        .select("link")
-        .in_("link", links_all)
+        .select("article_id")
+        .in_("article_id", article_ids)
         .execute()
         .data
     )
-    existing_links = {r["link"] for r in existing_rows}
+    existing_ids = {r["article_id"] for r in existing_rows}
 
     # 3) À scraper
-    todo = [a for a in articles if a.get("link") and a["link"] not in existing_links]
+    todo = [a for a in articles if a["id"] not in existing_ids and a.get("link")]
 
     print(
         f"Feed {FEED_ID} | total={len(articles)} "
-        f"| déjà={len(existing_links)} | à_scraper={len(todo)}"
+        f"| déjà={len(existing_ids)} | à_scraper={len(todo)}"
     )
 
     if not todo:
