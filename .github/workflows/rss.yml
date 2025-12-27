@@ -28,11 +28,11 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
-          python rss_to_supabase.py
+          python jobs/rss_to_supabase.py
 
       - name: Run article scraper (feed_id = 3)
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
-          python scrap_full_articles.py
+          python jobs/scrap_full_articles.py
