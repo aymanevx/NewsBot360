@@ -33,8 +33,8 @@ class MCPChatSession:
 
     async def _init(self):
         client = MCPClient.from_dict(self.config)
-        llm = ChatGroq(model="llama-3.3-70b-versatile")
-        self.agent = MCPAgent(llm=llm, client=client, memory_enabled=True, verbose=False)
+        llm = ChatGroq(model="openai/gpt-oss-120b")
+        self.agent = MCPAgent(llm=llm, client=client, memory_enabled=False, verbose=False)
 
     def run(self, text: str):
         fut = asyncio.run_coroutine_threadsafe(self.agent.run(text), self.loop)

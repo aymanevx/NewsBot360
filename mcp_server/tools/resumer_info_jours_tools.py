@@ -42,6 +42,7 @@ def register(mcp) -> None:
     @mcp.tool()
     def resumer_jour(date: str) -> str:
         """
+        Permet d'avoir le résumé des informations d'une journée choisie
         Input: date 'YYYY-MM-DD'
         Output: résumé texte de la journée
         """
