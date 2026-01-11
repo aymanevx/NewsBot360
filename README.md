@@ -1,4 +1,4 @@
-# 📰 News3Bot60 — Agent IA pour l’analyse intelligente de l’actualité
+# 📰 NewsBot360 — Agent IA pour l’analyse intelligente de l’actualité
 
 ## Présentation générale
 
@@ -67,7 +67,7 @@ Serveur MCP (FastMCP)
 
 **Objectif :** disposer d’un historique indépendant des API externes.
 
-- Base alimentée **quotidiennement depuis le 24 décembre**
+- Base alimentée **quotidiennement depuis le 24 décembre 2025**
 - Ingestion automatisée via **GitHub Actions**
 - Requêtes possibles :
   - mot-clé (ex: *Trump*)
@@ -156,15 +156,6 @@ Serveur MCP (FastMCP)
 - Base continuellement enrichie
 
 ---
-
-## Lancer le projet
-
-```bash
-git clone https://github.com/ZinebMnr/NewsBot360.git
-cd news360
-pip install -r requirements_mcp.txt
-python client.py
-```
 
 ## Auteurs
 
