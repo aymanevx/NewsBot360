@@ -41,8 +41,8 @@ Serveur MCP (FastMCP)
    ├── Recherche News (NewsAPI)
    ├── Recherche Base interne (DB)
    ├── Analyse de sentiment
-   ├── Labellisation thématique
-   ├── Dashboard (statistiques + graphiques)
+   ├── Synthèse de l’actualité du jour
+   ├── Graphique
    ├── Résumé d’articles
    └── PDF → Texte
 ```
