@@ -1,22 +1,21 @@
-# 📰 News360 — Agent IA pour l’analyse intelligente de l’actualité
+# 📰 News3Bot60 — Agent IA pour l’analyse intelligente de l’actualité
 
 ## Présentation générale
 
-**News360** est un **chatbot intelligent orienté actualités**, basé sur un **agent LLM orchestrant des outils MCP (Model Context Protocol)**.  
+**NewsBot360** est un **chatbot intelligent orienté actualités**, basé sur un **agent LLM orchestrant des outils MCP (Model Context Protocol)**.  
 Il permet d’interroger l’actualité en langage naturel, d’analyser des articles de presse et de produire des **synthèses et indicateurs de sentiment**.
 
 Le projet repose sur une architecture **agent + tools**, où le LLM agit comme un **chef d’orchestre** capable de :
 - rechercher des articles (API + base interne),
 - analyser leur contenu (labels, sentiment),
 - résumer et reformuler,
-- produire des statistiques et visualisations.
+- produire des visualisations.
 
 ---
 
 ## Objectifs du projet
 
 - Centraliser l’accès à l’actualité via plusieurs sources  
-- Permettre une **analyse thématique et temporelle** des sujets d’actualité  
 - Exploiter des **modèles NLP modernes** (LLM, Transformers, CamemBERT)  
 - Illustrer une architecture **agentique** moderne (MCP + LangChain)  
 - Automatiser l’ingestion et l’analyse quotidienne de données de presse  
@@ -31,7 +30,7 @@ Le projet repose sur une architecture **agent + tools**, où le LLM agit comme u
 Utilisateur
    │
    ▼
-Chat CLI (client.py)
+UI Streamlit
    │
    ▼
 Agent LLM (Groq / Ollama)
@@ -59,8 +58,8 @@ Serveur MCP (FastMCP)
 1. L’utilisateur pose une question (ex: *« Que dit la presse sur Trump ? »*)
 2. L’agent détecte une intention *actualité*
 3. Appel du tool MCP `search_news(topic="Trump")`
-4. Récupération d’environ **25 articles récents**
-5. Le LLM lit les résultats et produit une **synthèse argumentée**
+4. Récupération de **20 articles récents**
+5. Le LLM lit les résultats et produit une **synthèse**
 
 ---
 
@@ -74,25 +73,28 @@ Serveur MCP (FastMCP)
   - mot-clé (ex: *Trump*)
   - intervalle de dates (ex: *2 janvier → 5 janvier*)
 - Recherche actuelle basée sur le **titre**
-- Sortie : liste Python d’articles correspondants
+- Sortie : liste Python des titres des articles correspondants
 
 ---
 
-### 3️. Labellisation thématique & Dashboard
+### 3️. Graphiques de présence des labels
 
 #### Labels utilisés
 - Politique  
-- Économie  
-- International  
-- Société  
+- Economie  
+- Entreprises  
+- Societe 
 - Technologie  
-- Environnement  
-- Autres
+- Faits_Divers_Justice  
+- Autres_Indetermine
+- Sciences_Santé
+- Sport
+- Culture_Loisirs
 
 ---
 
 #### Exemple de requête
-> *« Quels sont les thèmes principalement abordés depuis le 1er janvier 2025 ? »*
+> *« J'aimerais visualiser la distributions des labels »*
 
 ---
 
@@ -124,6 +126,11 @@ Serveur MCP (FastMCP)
   - analyse
   - résumé
   - classification
+
+### 7. Actus du jours
+
+- On demande un résumé des actualité du jour
+- Renvoi un résumé des articles entier du jours choisit en appelant l'API d'OpenAI
 
 ---
 
