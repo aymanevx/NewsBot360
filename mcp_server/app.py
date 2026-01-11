@@ -1,5 +1,5 @@
 from mcp.server.fastmcp import FastMCP
-from mcp_server.tools import pdf_tools, sentiment_tools, news_tools, summartization_tools, graph_label_tools, news_date_tools
+from mcp_server.tools import pdf_tools, sentiment_tools, news_tools, summartization_tools, graph_label_tools, news_date_tools, resumer_info_jours_tools
 
 def create_server() -> FastMCP:
     mcp = FastMCP("PDF-and-sentiment")
@@ -10,5 +10,6 @@ def create_server() -> FastMCP:
     summartization_tools.register(mcp)
     graph_label_tools.register(mcp)
     news_date_tools.register(mcp)
-
+    resumer_info_jours_tools.register(mcp)
+    
     return mcp
