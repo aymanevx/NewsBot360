@@ -3,7 +3,7 @@
 ## Présentation générale
 
 **News360** est un **chatbot intelligent orienté actualités**, basé sur un **agent LLM orchestrant des outils MCP (Model Context Protocol)**.  
-Il permet d’interroger l’actualité en langage naturel, d’analyser des articles de presse à grande échelle et de produire des **synthèses, analyses thématiques, dashboards et indicateurs de sentiment**.
+Il permet d’interroger l’actualité en langage naturel, d’analyser des articles de presse et de produire des **synthèses et indicateurs de sentiment**.
 
 Le projet repose sur une architecture **agent + tools**, où le LLM agit comme un **chef d’orchestre** capable de :
 - rechercher des articles (API + base interne),
